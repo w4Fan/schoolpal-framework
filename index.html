@@ -21,8 +21,25 @@
     <aside class="drawer js-drawer drawer--open" for="drawer-button">
       <div class="drawer__drawer">
         <div class="drawer__toolbar-spacer">
-            <img src="http://www.risecenter.com/images/index/rise_logo.png" />
+          <img src="http://www.risecenter.com/images/index/rise_logo.png" />
         </div>
+        <ul class="list">
+          <li class="list-item drawer--selected">
+            <i class="fa fa-home fa-fw list-item__start-detail" aria-hidden="true"></i>
+            Home
+            <!-- <i class="fa fa-angle-down list-item__end-detail" aria-hidden="true"></i> -->
+          </li>
+          <li class="list-item">
+            <i class="fa fa-book fa-fw list-item__start-detail" aria-hidden="true"></i>
+            Library
+            <!-- <i class="fa fa-angle-down list-item__end-detail" aria-hidden="true"></i> -->
+          </li>
+          <li class="list-item">
+            <i class="fa fa-pencil fa-fw list-item__start-detail" aria-hidden="true"></i>
+            Applications
+            <!-- <i class="fa fa-angle-down list-item__end-detail" aria-hidden="true"></i> -->
+          </li>
+        </ul>
       </div>
     </aside>
 
@@ -33,22 +50,21 @@
           <i id="drawer-button" class="fa fa-bars toolbar__icon" aria-hidden="true"></i>
           <div class="toolbar__spacer"></div>
           <i id="menu-button" class="fa fa-ellipsis-v toolbar__icon" aria-hidden="true"></i>
-          <div class="menu menu--bottom-right js-menu js-ripple-effect" for="menu-button">
-            <div class="list">
-              <div class="list__item list__item--two-line">
-                <span class="list__item-primary-content">
-                  <span class="list__item-avatar">
-                    <img src="http://www.risecenter.com/images/index/rise_logo.png" />
-                  </span>
-                  <span>Bryan Cranston</span>
-                  <span class="list__item-sub-title">62 Episodes</span>
+          <div class="menu menu--bottom-right js-menu" for="menu-button">
+            <div class="list list--two-line list--avatar-list">
+              <div class="list-item">
+                <span class="list-item__start-detail">
+                  <img src="http://www.risecenter.com/images/index/rise_logo.png" />
+                </span>
+                <span class="list-item__text">
+                  Bryan Cranston
+                  <span class="list-item__text__secondary">62 Episodes</span>
                 </span>
               </div>
             </div>
             <!-- <div class="menu__item--full-bleed-divider"></div> -->
             <div class="menu__item">Some Action</div>
             <div class="menu__item">Another Action</div>
-            <div class="menu__item">Disabled Action</div>
             <div class="menu__item">Yet Another Action</div>
           </div>
         </div>

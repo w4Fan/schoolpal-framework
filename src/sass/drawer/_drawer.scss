@@ -5,6 +5,9 @@
 $layout-drawer-bg-color: unquote("rgb(#{$palette-grey-50})") !default;
 $layout-drawer-border-color: unquote("rgb(#{$palette-grey-300})") !default;
 $layout-text-color: unquote("rgb(#{$palette-grey-800})") !default;
+$layout-drawer-list-selected-text-color: #3f51b5 !default;
+$layout-drawer-mobile-breakpoint: 415px;
+$layout-drawer-mobile-width: 55px;
 
 .drawer {
   width: 0;
@@ -32,6 +35,57 @@ $layout-text-color: unquote("rgb(#{$palette-grey-800})") !default;
     }
   }
 
+  .list {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  .list-item {
+    @include typo-body-2();
+
+    position: relative;
+    padding: 0 16px;
+    outline: none;
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .list-item__start-detail {
+    color: rgba(0, 0, 0, 0.54);
+  }
+
+  &--selected.list-item,
+  &--selected.list-item .list-item__start-detail {
+    color: $layout-drawer-list-selected-text-color;
+  }
+
+  .list-item::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: animation-exit-temporary(opacity, 120ms);
+    border-radius: inherit;
+    background: currentColor;
+    opacity: 0;
+    content: "";
+  }
+
+  .list-item:focus::before {
+    transition: animation-enter(opacity, 180ms);
+    opacity: 0.12;
+  }
+
+  .list-item:active::before {
+    transition: animation-enter(opacity, 180ms);
+    opacity: 0.18;
+  }
+
+  .list-item:active:focus::before {
+    transition-timing-function: $animation-curve-linear-out-slow-in;
+  }
+
   &__drawer {
     @include shadow-2dp();
 
@@ -48,6 +102,10 @@ $layout-text-color: unquote("rgb(#{$palette-grey-800})") !default;
     border-right: 1px solid $layout-drawer-bg-color;
     overflow: hidden;
     touch-action: none;
+
+    @media (max-width: $layout-drawer-mobile-breakpoint) {
+      width: $layout-drawer-mobile-width;
+    }
   }
 
   &--animating {
@@ -63,6 +121,10 @@ $layout-text-color: unquote("rgb(#{$palette-grey-800})") !default;
   &--open {
     width: $layout-drawer-width;
     pointer-events: auto;
+
+    @media (max-width: $layout-drawer-mobile-breakpoint) {
+      width: $layout-drawer-mobile-width;
+    }
 
     .drawer__drawer {
       transform: none;

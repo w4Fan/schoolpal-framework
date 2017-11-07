@@ -171,9 +171,7 @@
   };
 
   Menu.prototype.removeAnimationEndListener_ = function(evt) {
-    evt.target.classList.remove(
-      Menu.prototype.CssClasses_.IS_ANIMATING
-    );
+    evt.target.classList.remove(Menu.prototype.CssClasses_.IS_ANIMATING);
   };
 
   Menu.prototype.addAnimationEndListener_ = function() {
