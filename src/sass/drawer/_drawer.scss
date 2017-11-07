@@ -1,0 +1,71 @@
+@import "../variables";
+@import "../mixins";
+@import "../functions";
+
+$layout-drawer-bg-color: unquote("rgb(#{$palette-grey-50})") !default;
+$layout-drawer-border-color: unquote("rgb(#{$palette-grey-300})") !default;
+$layout-text-color: unquote("rgb(#{$palette-grey-800})") !default;
+
+.drawer {
+  width: 0;
+
+  &__toolbar-spacer {
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    flex-shrink: 0;
+    align-items: center;
+    box-sizing: border-box;
+    height: 64px;
+    // padding: 16px;
+    padding: 0 $layout-header-desktop-indent / 2;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+
+    @media screen and (max-width: $layout-screen-size-threshold) {
+      height: $layout-header-mobile-row-height;
+      padding: 0 $layout-header-mobile-indent / 2;
+    }
+
+    & img {
+      display: inline-block;
+      height: 100%;
+    }
+  }
+
+  &__drawer {
+    @include shadow-2dp();
+
+    left: 0;
+    height: 100%;
+    transform: translateX(-107%);
+    transform: translateX(calc(-100% - 20px));
+    will-change: transform;
+    display: inline-flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    width: $layout-drawer-width;
+    background-color: $layout-drawer-bg-color;
+    border-right: 1px solid $layout-drawer-bg-color;
+    overflow: hidden;
+    touch-action: none;
+  }
+
+  &--animating {
+    .drawer__drawer {
+      transition: animation-exit-temporary(transform, 0.195s);
+    }
+
+    &.drawer--open .drawer__drawer {
+      transition: animation-enter(transform, 0.225s);
+    }
+  }
+
+  &--open {
+    width: $layout-drawer-width;
+    pointer-events: auto;
+
+    .drawer__drawer {
+      transform: none;
+    }
+  }
+}

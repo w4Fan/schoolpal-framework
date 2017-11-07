@@ -5,7 +5,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>schoolpal framework</title>
-  <link rel="stylesheet" href="dist/css/schoolpal.css" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="dist/schoolpal.css" />
   <style>
     .bg {
       background-color: #cccccc;
@@ -14,38 +16,84 @@
 </head>
 
 <body>
-  <header></header>
+  <div class="layout">
 
-  <aside></aside>
+    <aside class="drawer js-drawer drawer--open" for="drawer-button">
+      <div class="drawer__drawer">
+        <div class="drawer__toolbar-spacer">
+            <img src="http://www.risecenter.com/images/index/rise_logo.png" />
+        </div>
+      </div>
+    </aside>
 
-  <main>
-    <p>GRID</p>
-    <p>desktop-columns:12, tablet-columns:8, phone-columns:4</p>
-    <div class="grid">
-      <div class="cell cell--1-col bg">1</div>
-      <div class="cell cell--1-col bg">1</div>
-      <div class="cell cell--1-col bg">1</div>
-      <div class="cell cell--1-col bg">1</div>
-      <div class="cell cell--1-col bg">1</div>
-      <div class="cell cell--1-col bg">1</div>
-      <div class="cell cell--1-col bg">1</div>
-      <div class="cell cell--1-col bg">1</div>
-      <div class="cell cell--1-col bg">1</div>
-      <div class="cell cell--1-col bg">1</div>
-      <div class="cell cell--1-col bg">1</div>
-      <div class="cell cell--1-col bg">1</div>
+    <div class="layout__container">
+
+      <header class="toolbar">
+        <div class="toolbar__row">
+          <i id="drawer-button" class="fa fa-bars toolbar__icon" aria-hidden="true"></i>
+          <div class="toolbar__spacer"></div>
+          <i id="menu-button" class="fa fa-ellipsis-v toolbar__icon" aria-hidden="true"></i>
+          <div class="menu menu--bottom-right js-menu js-ripple-effect" for="menu-button">
+            <div class="list">
+              <div class="list__item list__item--two-line">
+                <span class="list__item-primary-content">
+                  <span class="list__item-avatar">
+                    <img src="http://www.risecenter.com/images/index/rise_logo.png" />
+                  </span>
+                  <span>Bryan Cranston</span>
+                  <span class="list__item-sub-title">62 Episodes</span>
+                </span>
+              </div>
+            </div>
+            <!-- <div class="menu__item--full-bleed-divider"></div> -->
+            <div class="menu__item">Some Action</div>
+            <div class="menu__item">Another Action</div>
+            <div class="menu__item">Disabled Action</div>
+            <div class="menu__item">Yet Another Action</div>
+          </div>
+        </div>
+      </header>
+
+      <amin>
+        <p>GRID</p>
+        <p>desktop-columns:12, tablet-columns:8, phone-columns:4</p>
+        <div class="grid">
+          <div class="cell cell--1-col bg">1</div>
+          <div class="cell cell--1-col bg">1</div>
+          <div class="cell cell--1-col bg">1</div>
+          <div class="cell cell--1-col bg">1</div>
+          <div class="cell cell--1-col bg">1</div>
+          <div class="cell cell--1-col bg">1</div>
+          <div class="cell cell--1-col bg">1</div>
+          <div class="cell cell--1-col bg">1</div>
+          <div class="cell cell--1-col bg">1</div>
+          <div class="cell cell--1-col bg">1</div>
+          <div class="cell cell--1-col bg">1</div>
+          <div class="cell cell--1-col bg">1</div>
+        </div>
+        <div class="grid">
+          <div class="cell cell--4-col bg">4</div>
+          <div class="cell cell--4-col bg">4</div>
+          <div class="cell cell--4-col bg">4</div>
+        </div>
+        <div class="grid">
+          <div class="cell cell--6-col cell--8-col-tablet bg">6 (8 tablet)</div>
+          <div class="cell cell--4-col cell--6-col-tablet bg">4 (6 tablet)</div>
+          <div class="cell cell--2-col cell--4-col-phone bg">2 (4 phone)</div>
+        </div>
+      </amin>
+
     </div>
-    <div class="grid">
-      <div class="cell cell--4-col bg">4</div>
-      <div class="cell cell--4-col bg">4</div>
-      <div class="cell cell--4-col bg">4</div>
-    </div>
-    <div class="grid">
-      <div class="cell cell--6-col cell--8-col-tablet bg">6 (8 tablet)</div>
-      <div class="cell cell--4-col cell--6-col-tablet bg">4 (6 tablet)</div>
-      <div class="cell cell--2-col cell--4-col-phone bg">2 (4 phone)</div>
-    </div>
-  </main>
+
+  </div>
+
+  <script src="dist/schoolpal.js"></script>
+  <script>
+    window.addEventListener('load', function () {
+      new Menu(document.querySelector('.js-menu'));
+      new Drawer(document.querySelector('.js-drawer'));
+    })
+  </script>
 </body>
 
 </html>
