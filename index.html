@@ -24,7 +24,7 @@
           <img src="http://www.risecenter.com/images/index/rise_logo.png" />
         </div>
         <ul class="list">
-          <li class="list-item drawer--selected">
+          <li class="list-item">
             <i class="fa fa-home fa-fw list-item__start-detail" aria-hidden="true"></i>
             Home
             <!-- <i class="fa fa-angle-down list-item__end-detail" aria-hidden="true"></i> -->
@@ -34,10 +34,52 @@
             Library
             <!-- <i class="fa fa-angle-down list-item__end-detail" aria-hidden="true"></i> -->
           </li>
+          <li class="collapse">
+            <div class="collapse-header list-item js-collapse">
+              <i class="fa fa-pencil fa-fw list-item__start-detail" aria-hidden="true"></i>
+              Applications
+              <span class="list-item__end-detail">
+                <i class="fa fa-angle-down collapse-arrow" aria-hidden="true"></i>
+              </span>
+            </div>
+            <ul class="collapse-body list list--dense">
+              <li class="list-item drawer--selected">
+                <i class="fa fa-home fa-fw list-item__start-detail" aria-hidden="true"></i>
+                Home
+                <!-- <i class="fa fa-angle-down list-item__end-detail" aria-hidden="true"></i> -->
+              </li>
+              <li class="list-item">
+                <i class="fa fa-book fa-fw list-item__start-detail" aria-hidden="true"></i>
+                Library
+                <!-- <i class="fa fa-angle-down list-item__end-detail" aria-hidden="true"></i> -->
+              </li>
+            </ul>
+          </li>
           <li class="list-item">
-            <i class="fa fa-pencil fa-fw list-item__start-detail" aria-hidden="true"></i>
-            Applications
+            <i class="fa fa-book fa-fw list-item__start-detail" aria-hidden="true"></i>
+            Library
             <!-- <i class="fa fa-angle-down list-item__end-detail" aria-hidden="true"></i> -->
+          </li>
+          <li class="collapse">
+            <div class="collapse-header list-item js-collapse">
+              <i class="fa fa-pencil fa-fw list-item__start-detail" aria-hidden="true"></i>
+              Applications
+              <span class="list-item__end-detail">
+                <i class="fa fa-angle-down collapse-arrow" aria-hidden="true"></i>
+              </span>
+            </div>
+            <ul class="collapse-body list list--dense">
+              <li class="list-item drawer--selected">
+                <i class="fa fa-home fa-fw list-item__start-detail" aria-hidden="true"></i>
+                Home
+                <!-- <i class="fa fa-angle-down list-item__end-detail" aria-hidden="true"></i> -->
+              </li>
+              <li class="list-item">
+                <i class="fa fa-book fa-fw list-item__start-detail" aria-hidden="true"></i>
+                Library
+                <!-- <i class="fa fa-angle-down list-item__end-detail" aria-hidden="true"></i> -->
+              </li>
+            </ul>
           </li>
         </ul>
       </div>
@@ -104,12 +146,6 @@
   </div>
 
   <script src="dist/schoolpal.js"></script>
-  <script>
-    window.addEventListener('load', function () {
-      new Menu(document.querySelector('.js-menu'));
-      new Drawer(document.querySelector('.js-drawer'));
-    })
-  </script>
 </body>
 
 </html>

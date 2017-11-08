@@ -274,7 +274,12 @@
     }
   };
 
-  Menu.prototype["show"] = Menu.prototype.show;
-  Menu.prototype["hide"] = Menu.prototype.hide;
   Menu.prototype["toggle"] = Menu.prototype.toggle;
+  
+  componentHandler.register({
+    constructor: Menu,
+    classAsString: 'Menu',
+    cssClass: 'js-menu',
+    widget: true
+  });
 })();

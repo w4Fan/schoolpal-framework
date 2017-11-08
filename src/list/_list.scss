@@ -7,21 +7,6 @@ $list-supporting-text-text-color: unquote("rgba(#{$color-black}, 0.54)")
 $list-icon-color: unquote("rgb(#{$palette-grey-600})") !default;
 $list-avatar-color: white !default;
 
-$list-side-padding: 16px;
-
-@mixin list-detail-size_($size) {
-  width: $size;
-  height: $size;
-}
-
-@mixin list-start-detail-size_($size) {
-  $text-offset: 72px;
-  $side-padding: $list-side-padding;
-  margin-right: $text-offset - $side-padding - $size;
-
-  @include list-detail-size_($size);
-}
-
 .list {
   @include typo-subhead();
 

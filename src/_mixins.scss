@@ -210,3 +210,21 @@
     0 11px 15px -7px rgba(0, 0, 0, $shadow-ambient-shadow-opacity),
     0 24px 38px 3px rgba(0, 0, 0, $shadow-key-umbra-opacity);
 }
+
+@mixin list-detail-size_($size) {
+  width: $size;
+  height: $size;
+}
+
+@mixin list-start-detail-size_($size, $collapse: false) {
+  $text-offset: 72px;
+
+  @if $collapse {
+    $text-offset: 56px;
+  }
+
+  $side-padding: $list-side-padding;
+  margin-right: $text-offset - $side-padding - $size;
+
+  @include list-detail-size_($size);
+}

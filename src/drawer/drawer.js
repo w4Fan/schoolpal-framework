@@ -82,7 +82,12 @@
     }
   };
 
-  Drawer.prototype["show"] = Drawer.prototype.show;
-  Drawer.prototype["hide"] = Drawer.prototype.hide;
   Drawer.prototype["toggle"] = Drawer.prototype.toggle;
+
+  componentHandler.register({
+    constructor: Drawer,
+    classAsString: 'Drawer',
+    cssClass: 'js-drawer',
+    widget: true
+  });
 })();
