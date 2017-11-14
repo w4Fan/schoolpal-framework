@@ -23,11 +23,11 @@
     }
   }
 
-  &--animating {
-    .collapse-arrow {
-      transform: rotate(180deg);
-    }
-  }
+  // &--animating {
+  //   .collapse-arrow {
+  //     transform: rotate(180deg);
+  //   }
+  // }
 
   &--open {
     pointer-events: auto;

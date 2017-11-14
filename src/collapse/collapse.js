@@ -9,9 +9,9 @@
   window["Collapse"] = Collapse;
 
   Collapse.prototype.CssClasses_ = {
+    JS_COLLAPSE: "js-collapse",
     ITEM: "list-item",
-    IS_VISIBLE: "collapse--open",
-    IS_ANIMATING: "collapse--animating"
+    IS_VISIBLE: "collapse--open"
   };
 
   Collapse.prototype.init = function() {
@@ -26,49 +26,40 @@
     this.toggle(evt);
   };
 
-  Collapse.prototype.removeAnimationEndListener_ = function(evt) {
-    evt.target.parentNode.classList.remove(
-      Collapse.prototype.CssClasses_.IS_ANIMATING
-    );
-  };
-
-  Collapse.prototype.addAnimationEndListener_ = function() {
-    this.element_.addEventListener(
-      "transitionend",
-      this.removeAnimationEndListener_
-    );
-    this.element_.addEventListener(
-      "webkitTransitionEnd",
-      this.removeAnimationEndListener_
-    );
-  };
-
   Collapse.prototype.show = function(evt) {
-    if (this.element_) {
-      var items = this.container_.querySelectorAll("." + this.CssClasses_.ITEM);
-      var count = items.length;
-      var height = items[0].getBoundingClientRect().height * count;
+    var collapses = document.getElementsByClassName(
+      this.CssClasses_.JS_COLLAPSE
+    );
+    var items = this.container_.querySelectorAll("." + this.CssClasses_.ITEM);
+    var count = items.length;
+    var height = items[0].getBoundingClientRect().height * count;
 
-      window.requestAnimationFrame(
-        function() {
-          this.outline_.classList.add(this.CssClasses_.IS_ANIMATING);
-          this.container_.style.height = height + "px";
-          this.outline_.classList.add(this.CssClasses_.IS_VISIBLE);
-        }.bind(this)
-      );
-
-      this.addAnimationEndListener_();
+    for (var i = 0; i < collapses.length; i++) {
+      if (
+        collapses[i]["Collapse"].element_ !== this.element_ &&
+        collapses[i]["Collapse"].outline_.classList.contains(
+          this.CssClasses_.IS_VISIBLE
+        )
+      ) {
+        collapses[i]["Collapse"].hide();
+      }
     }
+
+    window.requestAnimationFrame(
+      function() {
+        this.container_.style.height = height + "px";
+        this.outline_.classList.add(this.CssClasses_.IS_VISIBLE);
+      }.bind(this)
+    );
   };
 
   Collapse.prototype.hide = function(evt) {
-    if (this.element_) {
-      this.outline_.classList.add(this.CssClasses_.IS_ANIMATING);
-      this.container_.style.height = "0px";
-      this.outline_.classList.remove(this.CssClasses_.IS_VISIBLE);
-
-      this.addAnimationEndListener_();
-    }
+    window.requestAnimationFrame(
+      function() {
+        this.container_.style.height = "0px";
+        this.outline_.classList.remove(this.CssClasses_.IS_VISIBLE);
+      }.bind(this)
+    );
   };
 
   Collapse.prototype.toggle = function(evt) {
@@ -83,8 +74,8 @@
 
   componentHandler.register({
     constructor: Collapse,
-    classAsString: 'Collapse',
-    cssClass: 'js-collapse',
+    classAsString: "Collapse",
+    cssClass: "js-collapse",
     widget: true
   });
 })();

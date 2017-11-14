@@ -1,16 +1,7 @@
 /* COLOR */
 
-$palette-grey:
-"250,250,250"
-"245,245,245"
-"238,238,238"
-"224,224,224"
-"189,189,189"
-"158,158,158"
-"117,117,117"
-"97,97,97"
-"66,66,66"
-"33,33,33";
+$palette-grey: "250,250,250" "245,245,245" "238,238,238" "224,224,224"
+  "189,189,189" "158,158,158" "117,117,117" "97,97,97" "66,66,66" "33,33,33";
 
 $palette-grey-50: nth($palette-grey, 1);
 $palette-grey-100: nth($palette-grey, 2);
@@ -23,10 +14,41 @@ $palette-grey-700: nth($palette-grey, 8);
 $palette-grey-800: nth($palette-grey, 9);
 $palette-grey-900: nth($palette-grey, 10);
 
+$palette-indigo:
+"232,234,246"
+"197,202,233"
+"159,168,218"
+"121,134,203"
+"92,107,192"
+"63,81,181"
+"57,73,171"
+"48,63,159"
+"40,53,147"
+"26,35,126"
+"140,158,255"
+"83,109,254"
+"61,90,254"
+"48,79,254";
+
+$palette-indigo-50: nth($palette-indigo, 1);
+$palette-indigo-100: nth($palette-indigo, 2);
+$palette-indigo-200: nth($palette-indigo, 3);
+$palette-indigo-300: nth($palette-indigo, 4);
+$palette-indigo-400: nth($palette-indigo, 5);
+$palette-indigo-500: nth($palette-indigo, 6);
+$palette-indigo-600: nth($palette-indigo, 7);
+$palette-indigo-700: nth($palette-indigo, 8);
+$palette-indigo-800: nth($palette-indigo, 9);
+$palette-indigo-900: nth($palette-indigo, 10);
+$palette-indigo-A100: nth($palette-indigo, 11);
+$palette-indigo-A200: nth($palette-indigo, 12);
+$palette-indigo-A400: nth($palette-indigo, 13);
+$palette-indigo-A700: nth($palette-indigo, 14);
+
 /* Typography */
 
-$preferred_font: 'Roboto', 'Helvetica', 'Arial', sans-serif !default;
-$performance_font: 'Helvetica', 'Arial', sans-serif !default;
+$preferred_font: "Roboto", "Helvetica", "Arial", sans-serif !default;
+$performance_font: "Helvetica", "Arial", sans-serif !default;
 $color-black: "0,0,0";
 $color-white: "255,255,255";
 $color-accent: "255,64,129";
@@ -101,6 +123,21 @@ $list-icon-size: 24px !default;
 
 $list-two-line-height: 72px !default;
 $list-three-line-height: 88px !default;
+
+/* BUTTON */
+
+$button-min-width: 64px !default;
+$button-height: 36px !default;
+$button-padding: 16px !default;
+$button-margin: 4px !default;
+$button-border-radius: 2px !default;
+
+$button-fab-size: 56px !default;
+$button-fab-size-mini: 40px !default;
+$button-fab-font-size: 24px !default;
+
+$button-icon-size: 32px !default;
+$button-icon-size-mini: 24px !default;
 
 /* ANIMATION */
 

@@ -13,6 +13,7 @@
       background-color: #cccccc;
     }
   </style>
+  <script src="dist/schoolpal.js"></script>
 </head>
 
 <body>
@@ -24,6 +25,13 @@
           <img src="http://www.risecenter.com/images/index/rise_logo.png" />
         </div>
         <ul class="list">
+          <li id="dialog-button" class="list-item">
+            <i class="fa fa-home fa-fw list-item__start-detail" aria-hidden="true"></i>
+            Group
+            <span class="list-item__end-detail">
+              <i class="fa fa-angle-right" aria-hidden="true"></i>
+            </span>
+          </li>
           <li class="list-item">
             <i class="fa fa-home fa-fw list-item__start-detail" aria-hidden="true"></i>
             Home
@@ -85,13 +93,62 @@
       </div>
     </aside>
 
+    <aside id="dialog" class="dialog js-dialog" role="alertdialog" for="dialog-button">
+      <div class="dialog__surface">
+        <header class="dialog__header">
+          <h2 class="dialog__header__title">
+            Choose a Ringtone
+          </h2>
+        </header>
+        <section class="dialog__body dialog__body--scrollable">
+          <ul class="list groups js-groups">
+            <li class="list-item" level="1">
+              <i class="list-item__start-detail fa fa-angle-down fa-fw groups-arrow" aria-hidden="true"></i>
+              Applications
+            </li>
+            <li style="padding-left:56px" class="list-item" level="2">
+              <i class="list-item__start-detail fa fa-angle-down fa-fw groups-arrow" aria-hidden="true"></i>
+              Applications
+            </li>
+            <li style="padding-left:112px" class="list-item" level="3">
+              <span class="list-item__start-detail"></span>
+              Applications
+            </li>
+            <li style="padding-left:56px" class="list-item" level="2">
+              <span class="list-item__start-detail"></span>
+              Applications
+            </li>
+            <li class="list-item" level="1">
+              <i class="list-item__start-detail fa fa-angle-down fa-fw groups-arrow" aria-hidden="true"></i>
+              Applications
+            </li>
+            <li style="padding-left:56px" class="list-item" level="2">
+              <span class="list-item__start-detail"></span>
+              Applications
+            </li>
+          </ul>
+        </section>
+        <footer class="dialog__footer">
+          <button type="button" class="button button--cancel dialog__footer__button--cancel">Decline</button>
+          <button type="button" class="button button--primary dialog__footer__button--accept">Accept</button>
+        </footer>
+      </div>
+      <div class="dialog__backdrop"></div>
+    </aside>
+
     <div class="layout__container">
 
       <header class="toolbar">
         <div class="toolbar__row">
-          <i id="drawer-button" class="fa fa-bars toolbar__icon" aria-hidden="true"></i>
+          <!-- <i id="drawer-button" class="fa fa-bars toolbar__icon" aria-hidden="true"></i> -->
+          <button id="drawer-button" class="button button--icon toolbar__icon js-button">
+            <i class="fa fa-bars" aria-hidden="true"></i>
+          </button>
           <div class="toolbar__spacer"></div>
-          <i id="menu-button" class="fa fa-ellipsis-v toolbar__icon" aria-hidden="true"></i>
+          <!-- <i id="menu-button" class="fa fa-ellipsis-v toolbar__icon" aria-hidden="true"></i> -->
+          <button id="menu-button" class="button button--icon toolbar__icon js-button">
+            <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+          </button>
           <div class="menu menu--bottom-right js-menu" for="menu-button">
             <div class="list list--two-line list--avatar-list">
               <div class="list-item">
@@ -139,13 +196,60 @@
           <div class="cell cell--4-col cell--6-col-tablet bg">4 (6 tablet)</div>
           <div class="cell cell--2-col cell--4-col-phone bg">2 (4 phone)</div>
         </div>
+        <p>BUTTONS</p>
+        <button class="button button--fab js-button">
+          <i class="fa fa-plus" aria-hidden="true"></i>
+        </button>
+        <button class="button button--fab button--mini-fab js-button">
+            <i class="fa fa-plus" aria-hidden="true"></i>
+          </button>
+        <button class="button button--fab js-button" disabled>
+          <i class="fa fa-plus" aria-hidden="true"></i>
+        </button>
+        <br/><br/>
+        <button class="button button--raised js-button">
+          Button
+        </button>
+        <button class="button button--raised js-button" disabled>
+          Button
+        </button>
+        <button class="button button--raised button--primary js-button">
+          Button
+        </button>
+        <bbr/><br/><br/>
+        <button class="button js-button">
+          Button
+        </button>
+        <button class="button button--primary js-button">
+          Button
+        </button>
+        <br /><br/>
+        <button class="button button--icon js-button">
+          <i class="fa fa-eercast" aria-hidden="true"></i>
+        </button>
+        <button class="button button--icon button--primary js-button">
+          <i class="fa fa-eercast" aria-hidden="true"></i>
+        </button>
       </amin>
 
     </div>
 
   </div>
 
-  <script src="dist/schoolpal.js"></script>
+  <script>
+    window.addEventListener('load', function () {
+      var dialog = document.getElementById('dialog')["Dialog"];
+
+      dialog.acceptBtn.addEventListener('click', function () {
+        console.log('accept')
+        dialog.hide()
+      })
+      dialog.cancelBtn.addEventListener('click', function () {
+        console.log('cancel')
+        dialog.hide()
+      })
+    })
+  </script>
 </body>
 
 </html>

@@ -169,6 +169,19 @@
   overflow: hidden;
 }
 
+@mixin typo-button($colorContrast: false, $usePreferred: true) {
+  @include typo-preferred-font($usePreferred);
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  line-height: 1;
+  letter-spacing: 0;
+
+  @if $colorContrast {
+    opacity: 0.87;
+  }
+}
+
 @mixin focus-shadow() {
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.18), 0 8px 16px rgba(0, 0, 0, 0.36);
 }
