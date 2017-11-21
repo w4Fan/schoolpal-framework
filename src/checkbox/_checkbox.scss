@@ -1,0 +1,140 @@
+@import "../variables";
+@import "../mixins";
+
+$checkbox-color: unquote("rgb(#{$palette-indigo-500})") !default;
+$checkbox-off-color: unquote("rgba(#{$color-black}, 0.54)") !default;
+$checkbox-disabled-color: unquote("rgba(#{$color-black}, 0.26)") !default;
+$checkbox-focus-color: unquote("rgba(#{$palette-indigo-500}, 0.26)") !default;
+
+.checkbox {
+  position: relative;
+  z-index: 1;
+  vertical-align: middle;
+  display: inline-block;
+  box-sizing: border-box;
+  // width: 100%;
+  height: $checkbox-label-height;
+  margin: 0;
+  padding: 0;
+
+  &.is-upgraded {
+    padding-left: $checkbox-button-size + $checkbox-padding;
+  }
+}
+
+.checkbox__input {
+  line-height: $checkbox-label-height;
+
+  .checkbox.is-upgraded & {
+    position: absolute;
+    width: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    opacity: 0;
+    -ms-appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    border: none;
+  }
+}
+
+.checkbox__box-outline {
+  position: absolute;
+  top: $checkbox-top-offset;
+  left: 0;
+
+  display: inline-block;
+
+  box-sizing: border-box;
+  width: $checkbox-button-size;
+  height: $checkbox-button-size;
+  margin: 0;
+
+  cursor: pointer;
+  overflow: hidden;
+
+  border: 2px solid $checkbox-off-color;
+  border-radius: 2px;
+
+  z-index: 2;
+
+  .checkbox.is-checked & {
+    border: 2px solid $checkbox-color;
+  }
+
+  fieldset[disabled] .checkbox &,
+  .checkbox.is-disabled & {
+    border: 2px solid $checkbox-disabled-color;
+    cursor: auto;
+  }
+}
+
+.checkbox__tick-outline {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  mask: url("./tick-mask.svg?embed");
+
+  background: transparent;
+  @include animation-default(0.28s);
+  transition-property: background-image;
+
+  .checkbox.is-checked & {
+    background-color: $checkbox-color;
+    background-image: url("./tick.svg?embed");
+  }
+
+  fieldset[disabled] .checkbox.is-checked &,
+  .checkbox.is-checked.is-disabled & {
+    background-color: $checkbox-disabled-color;
+  }
+}
+
+.checkbox__label {
+  position: relative;
+  cursor: pointer;
+  font-size: $checkbox-label-font-size;
+  line-height: $checkbox-label-height;
+  margin: 0;
+
+  fieldset[disabled] .checkbox &,
+  .checkbox.is-disabled & {
+    color: $checkbox-disabled-color;
+    cursor: auto;
+  }
+}
+
+.checkbox__ripple-container {
+  position: absolute;
+  z-index: 2;
+  top: -(($checkbox-ripple-size - $checkbox-label-height) / 2);
+  left: -(($checkbox-ripple-size - $checkbox-button-size) / 2);
+
+  box-sizing: border-box;
+  width: $checkbox-ripple-size;
+  height: $checkbox-ripple-size;
+  border-radius: 50%;
+
+  cursor: pointer;
+
+  overflow: hidden;
+  -webkit-mask-image: -webkit-radial-gradient(circle, white, black);
+
+  & .ripple {
+    background: $checkbox-color;
+  }
+
+  fieldset[disabled] .checkbox &,
+  .checkbox.is-disabled & {
+    cursor: auto;
+  }
+
+  fieldset[disabled] .checkbox & .ripple,
+  .checkbox.is-disabled & .ripple {
+    background: transparent;
+  }
+}

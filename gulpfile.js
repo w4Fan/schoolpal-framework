@@ -2,7 +2,7 @@
 
 var gulp = require("gulp");
 var sass = require("gulp-sass");
-var concat = require('gulp-concat'); 
+var concat = require("gulp-concat");
 
 gulp.task("sass", function() {
   return gulp
@@ -12,7 +12,8 @@ gulp.task("sass", function() {
 });
 
 gulp.task("js", function() {
-  return gulp.src("./src/**/*.js")
-  .pipe(concat('schoolpal.js'))
-  .pipe(gulp.dest("./dist/"));
+  return gulp
+    .src("./src/**/*.js")
+    .pipe(concat("schoolpal.js"))
+    .pipe(gulp.dest("./dist/"));
 });

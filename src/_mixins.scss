@@ -241,3 +241,23 @@
 
   @include list-detail-size_($size);
 }
+
+@mixin animation-fast-out-slow-in($duration:0.2s) {
+  transition-duration: $duration;
+  transition-timing-function: $animation-curve-fast-out-slow-in;
+}
+
+@mixin animation-linear-out-slow-in($duration:0.2s) {
+  transition-duration: $duration;
+  transition-timing-function: $animation-curve-linear-out-slow-in;
+}
+
+@mixin animation-fast-out-linear-in($duration:0.2s) {
+  transition-duration: $duration;
+  transition-timing-function: $animation-curve-fast-out-linear-in;
+}
+
+@mixin animation-default($duration:0.2s) {
+  transition-duration: $duration;
+  transition-timing-function: $animation-curve-default;
+}
