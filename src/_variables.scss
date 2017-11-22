@@ -45,6 +45,10 @@ $palette-indigo-A200: nth($palette-indigo, 12);
 $palette-indigo-A400: nth($palette-indigo, 13);
 $palette-indigo-A700: nth($palette-indigo, 14);
 
+/* Device Breakpoint */
+
+$mobile-breakpoint: 599px;
+
 /* Typography */
 
 $preferred_font: "Roboto", "Helvetica", "Arial", sans-serif !default;
@@ -52,8 +56,6 @@ $performance_font: "Helvetica", "Arial", sans-serif !default;
 $color-black: "0,0,0";
 $color-white: "255,255,255";
 $color-accent: "255,64,129";
-$text-color-primary: unquote("rgba(#{$color-black}, 0.87)") !default;
-$text-link-color: unquote("rgb(#{$color-accent})") !default;
 
 /* GRID */
 
@@ -182,6 +184,55 @@ $switch-track-top: ($switch-label-height - $switch-track-height) / 2 !default;
 $switch-thumb-top: ($switch-label-height - $switch-thumb-size) / 2 !default;
 $switch-ripple-size: $switch-label-height * 2 !default;
 $switch-helper-size: 8px !default;
+
+/* CARD */
+
+/* Card dimensions */
+$card-width: 330px !default;
+$card-height: 200px !default;
+$card-font-size: 16px !default;
+$card-title-font-size: 24px !default;
+$card-subtitle-font-size: 14px !default;
+$card-horizontal-padding: 16px !default;
+$card-vertical-padding: 16px !default;
+
+$card-title-perspective-origin-x: 165px !default;
+$card-title-perspective-origin-y: 56px !default;
+
+$card-title-transform-origin-x: 165px !default;
+$card-title-transform-origin-y: 56px !default;
+
+$card-title-text-transform-origin-x: 149px !default;
+$card-title-text-transform-origin-y: 48px !default;
+
+$card-supporting-text-font-size: 1rem !default;
+$card-supporting-text-line-height: 18px !default;
+
+$card-actions-font-size: 16px !default;
+
+$card-title-text-font-weight: 300 !default;
+$card-z-index: 1 !default;
+
+/* DATA TABLE */
+
+$data-table-font-size: 13px !default;
+$data-table-header-font-size: 12px !default;
+$data-table-header-sort-icon-size: 16px !default;
+
+$data-table-dividers: 1px solid rgba(#000, 0.12) !default;
+
+$data-table-row-height: 48px !default;
+$data-table-last-row-height: 56px !default;
+$data-table-header-height: 56px !default;
+
+$data-table-column-spacing: 36px !default;
+$data-table-column-padding: $data-table-column-spacing / 2;
+
+$data-table-card-header-height: 64px !default;
+$data-table-card-title-top: 20px !default;
+$data-table-card-padding: 24px !default;
+$data-table-button-padding-right: 16px !default;
+$data-table-cell-top: $data-table-card-padding / 2;
 
 /* ANIMATION */
 

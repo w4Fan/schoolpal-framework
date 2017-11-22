@@ -1,9 +1,11 @@
 @import "../variables";
 @import "../mixins";
 
-$toolbar-mobile-breakpoint: 599px;
 $toolbar-element-horizontal-padding-desktop: 24px;
 $toolbar-element-horizontal-padding-mobile: 16px;
+
+$toolbar-bg-color: unquote("rgb(#{$palette-indigo-500})") !default;
+$toolbar-text-color: unquote("rgb(#{$color-white})");
 
 .layout {
   width: 100%;
@@ -14,6 +16,7 @@ $toolbar-element-horizontal-padding-mobile: 16px;
   position: relative;
 
   &__container {
+    position: relative;
     display: inline-flex;
     flex-direction: column;
     flex-grow: 1;
@@ -34,8 +37,8 @@ $toolbar-element-horizontal-padding-mobile: 16px;
   margin: 0;
   padding: 0;
   border: none;
-  background-color: unquote("rgb(#{$color-black})");
-  color: unquote("rgb(#{$color-white})");
+  background-color: $toolbar-bg-color;
+  color: $toolbar-text-color;
   z-index: 3;
 
   @include shadow-2dp();
@@ -89,7 +92,7 @@ $toolbar-element-horizontal-padding-mobile: 16px;
   }
 }
 
-@media (max-width: $toolbar-mobile-breakpoint) {
+@media (max-width: $mobile-breakpoint) {
   .toolbar__icon {
     padding-right: $toolbar-element-horizontal-padding-mobile / 2;
     padding-left: $toolbar-element-horizontal-padding-mobile / 2;

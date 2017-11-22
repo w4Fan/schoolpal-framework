@@ -14,7 +14,17 @@ html {
   touch-action: manipulation;
 }
 
-article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, section {
+article,
+aside,
+dialog,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section {
   display: block;
 }
 
@@ -27,11 +37,6 @@ body {
 
 [tabindex="-1"]:focus {
   outline: none !important;
-}
-
-main {
-  display: block;
-  overflow: auto;
 }
 
 *[hidden] {

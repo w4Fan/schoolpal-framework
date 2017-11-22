@@ -5,6 +5,7 @@
 // Resets and dependencies
 @import "reboot/reboot";
 @import "typography/typography";
+@import "shadow/shadow";
 // Components
 @import "grid/grid";
 @import "layout/layout";
@@ -19,3 +20,5 @@
 @import "checkbox/checkbox";
 @import "radio/radio";
 @import "switch/switch";
+@import "card/card";
+@import "data-table/data-table";

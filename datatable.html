@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>schoolpal framework</title>
+  <title>schoolpal framework data table</title>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
   <link rel="stylesheet" href="dist/schoolpal.css" />
@@ -18,7 +18,6 @@
 
 <body>
   <div class="layout">
-
     <aside class="drawer js-drawer drawer--open" for="drawer-button">
       <div class="drawer__drawer">
         <div class="drawer__toolbar-spacer">
@@ -137,7 +136,6 @@
     </aside>
 
     <div class="layout__container">
-
       <header class="toolbar">
         <div class="toolbar__row">
           <!-- <i id="drawer-button" class="fa fa-bars toolbar__icon" aria-hidden="true"></i> -->
@@ -170,146 +168,68 @@
       </header>
 
       <main>
-        <p>GRID</p>
-        <p>desktop-columns:12, tablet-columns:8, phone-columns:4</p>
-        <div class="grid">
-          <div class="cell cell--1-col bg">1</div>
-          <div class="cell cell--1-col bg">1</div>
-          <div class="cell cell--1-col bg">1</div>
-          <div class="cell cell--1-col bg">1</div>
-          <div class="cell cell--1-col bg">1</div>
-          <div class="cell cell--1-col bg">1</div>
-          <div class="cell cell--1-col bg">1</div>
-          <div class="cell cell--1-col bg">1</div>
-          <div class="cell cell--1-col bg">1</div>
-          <div class="cell cell--1-col bg">1</div>
-          <div class="cell cell--1-col bg">1</div>
-          <div class="cell cell--1-col bg">1</div>
-        </div>
-        <div class="grid">
-          <div class="cell cell--4-col bg">4</div>
-          <div class="cell cell--4-col bg">4</div>
-          <div class="cell cell--4-col bg">4</div>
-        </div>
-        <div class="grid">
-          <div class="cell cell--6-col cell--8-col-tablet bg">6 (8 tablet)</div>
-          <div class="cell cell--4-col cell--6-col-tablet bg">4 (6 tablet)</div>
-          <div class="cell cell--2-col cell--4-col-phone bg">2 (4 phone)</div>
-        </div>
-        <p>BUTTONS</p>
-        <button class="button button--fab js-button">
-          <i class="fa fa-plus" aria-hidden="true"></i>
-        </button>
-        <button class="button button--fab button--mini-fab js-button">
-          <i class="fa fa-plus" aria-hidden="true"></i>
-        </button>
-        <button class="button button--fab js-button" disabled>
-          <i class="fa fa-plus" aria-hidden="true"></i>
-        </button>
-        <br/>
-        <br/>
-        <button class="button button--raised js-button">
-          Button
-        </button>
-        <button class="button button--raised js-button" disabled>
-          Button
-        </button>
-        <button class="button button--raised button--primary js-button">
-          Button
-        </button>
-        <br/>
-        <br/>
-        <br/>
-        <button class="button js-button">
-          Button
-        </button>
-        <button class="button button--primary js-button">
-          Button
-        </button>
-        <br />
-        <br/>
-        <button class="button button--icon js-button">
-          <i class="fa fa-eercast" aria-hidden="true"></i>
-        </button>
-        <button class="button button--icon button--primary js-button">
-          <i class="fa fa-eercast" aria-hidden="true"></i>
-        </button>
-        <p>form</p>
-        <form action="#">
-          <div class="textfield js-textfield">
-            <input class="textfield__input" type="text" id="sample1">
-            <label class="textfield__label" for="sample1">Text...</label>
-          </div>&nbsp;&nbsp;
-          <div class="textfield js-textfield">
-            <select class="textfield__input textfield__input-select" id="sample2">
-              <option value=""></option>
-              <option value="1">selectfield-highlight-color</option>
-              <option value="2">selectfield-disabled-color</option>
-              <option value="3">selectfield-error-color</option>
-            </select>
-            <div class="textfield__icon"><i class="fa fa-angle-down" aria-hidden="true"></i></div>
-            <label class="textfield__label" for="sample2">Select...</label>
+        <div class="card shadow--2dp">
+          <div class="card__title">
+            <div class="card__title-text">
+              <h1 class="card__title-text--large">Title</h1>
+              <h2 class="card__title-text--sub">Sub Title</h2>
+            </div>
+            <div class="card__title--spacer"></div>
+            <button class="button button--icon js-button">
+              <i class="fa fa-plus" aria-hidden="true"></i>
+            </button>
+            <button class="button button--icon js-button">
+              <i class="fa fa-pencil" aria-hidden="true"></i>
+            </button>
+            <button class="button button--icon js-button">
+              <i class="fa fa-trash-o" aria-hidden="true"></i>
+            </button>
           </div>
-          <br />
-          <br />
-          <label class="checkbox js-checkbox" for="checkbox-1">
-            <input type="checkbox" id="checkbox-1" class="checkbox__input" checked>
-            <span class="checkbox__label">Checkbox1</span>
-          </label>
-          <label class="checkbox js-checkbox" for="checkbox-2">
-            <input type="checkbox" id="checkbox-2" class="checkbox__input" disabled>
-            <span class="checkbox__label">Checkbox2</span>
-          </label>
-          <br />
-          <br />
-          <label class="radio js-radio" for="option-1">
-            <input type="radio" id="option-1" class="radio__button" name="options" value="1" checked>
-            <span class="radio__label">First</span>
-          </label>
-          <label class="radio js-radio" for="option-2">
-            <input type="radio" id="option-2" class="radio__button" name="options" value="2">
-            <span class="radio__label">Second</span>
-          </label>
-          <label class="radio js-radio" for="option-3">
-            <input type="radio" id="option-3" class="radio__button" name="options" value="3" disabled>
-            <span class="radio__label">Third</span>
-          </label>
-          <br />
-          <br />
-          <label class="switch js-switch" for="switch-1">
-            <input type="checkbox" id="switch-1" class="switch__input" checked>
-            <span class="switch__label"></span>
-          </label>&nbsp;&nbsp;&nbsp;&nbsp;
-          <label class="switch js-switch" for="switch-2">
-            <input type="checkbox" id="switch-2" class="switch__input">
-            <span class="switch__label"></span>
-          </label>&nbsp;&nbsp;&nbsp;&nbsp;
-          <label class="switch js-switch" for="switch-3">
-            <input type="checkbox" id="switch-3" class="switch__input" disabled>
-            <span class="switch__label"></span>
-          </label>
-        </form>
-        <a href="datatable.html">data table demo</a>
+          <div class="card__supporting-datatable">
+            <table class="data-table js-data-table data-table--selectable">
+              <thead>
+                <tr>
+                  <th class="data-table__cell--non-numeric">Material</th>
+                  <th>Quantity</th>
+                  <th>Unit price</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="data-table__cell--non-numeric">Acrylic (Transparent)</td>
+                  <td>25</td>
+                  <td>$2.90</td>
+                </tr>
+                <tr>
+                  <td class="data-table__cell--non-numeric">Plywood (Birch)</td>
+                  <td>50</td>
+                  <td>$1.25</td>
+                </tr>
+                <tr>
+                  <td class="data-table__cell--non-numeric">Laminate (Gold on Blue)</td>
+                  <td>10</td>
+                  <td>$2.35</td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="card__actions">
+              <div class="data-table__pagination">
+                <div class="data-table__pagination--btn">
+                  <button class="button button--icon js-button">
+                    <i class="fa fa-angle-left" aria-hidden="true"></i>
+                  </button>
+                  <button class="button button--icon js-button">
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                  </button>
+                </div>
+                <span>1 of 13</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </main>
-
     </div>
-
   </div>
-
-  <script>
-    window.addEventListener('load', function () {
-      var dialog = document.getElementById('dialog')["Dialog"];
-
-      dialog.acceptBtn.addEventListener('click', function () {
-        console.log('accept')
-        dialog.hide()
-      })
-      dialog.cancelBtn.addEventListener('click', function () {
-        console.log('cancel')
-        dialog.hide()
-      })
-    })
-  </script>
 </body>
 
 </html>
