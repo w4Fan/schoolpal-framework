@@ -14,21 +14,9 @@ $palette-grey-700: nth($palette-grey, 8);
 $palette-grey-800: nth($palette-grey, 9);
 $palette-grey-900: nth($palette-grey, 10);
 
-$palette-indigo:
-"232,234,246"
-"197,202,233"
-"159,168,218"
-"121,134,203"
-"92,107,192"
-"63,81,181"
-"57,73,171"
-"48,63,159"
-"40,53,147"
-"26,35,126"
-"140,158,255"
-"83,109,254"
-"61,90,254"
-"48,79,254";
+$palette-indigo: "232,234,246" "197,202,233" "159,168,218" "121,134,203"
+  "92,107,192" "63,81,181" "57,73,171" "48,63,159" "40,53,147" "26,35,126"
+  "140,158,255" "83,109,254" "61,90,254" "48,79,254";
 
 $palette-indigo-50: nth($palette-indigo, 1);
 $palette-indigo-100: nth($palette-indigo, 2);
@@ -51,8 +39,10 @@ $mobile-breakpoint: 599px;
 
 /* Typography */
 
-$preferred_font: "Roboto", "Helvetica", "Arial", sans-serif !default;
-$performance_font: "Helvetica", "Arial", sans-serif !default;
+$preferred_font: "Roboto", "Hiragino Sans GB", "Microsoft YaHei", "Arial",
+  sans-serif !default;
+$performance_font: "Hiragino Sans GB", "Microsoft YaHei", "Arial",
+  sans-serif !default;
 $color-black: "0,0,0";
 $color-white: "255,255,255";
 $color-accent: "255,64,129";
@@ -159,8 +149,9 @@ $checkbox-label-height: 24px !default;
 $checkbox-button-size: 16px !default;
 $checkbox-inner-margin: 2px !default;
 $checkbox-padding: 8px !default;
-$checkbox-top-offset:
-($checkbox-label-height - $checkbox-button-size - $checkbox-inner-margin) / 2;
+$checkbox-top-offset: (
+    $checkbox-label-height - $checkbox-button-size - $checkbox-inner-margin
+  ) / 2;
 $checkbox-ripple-size: $checkbox-label-height * 1.5;
 
 /* RADIO */
@@ -233,6 +224,12 @@ $data-table-card-title-top: 20px !default;
 $data-table-card-padding: 24px !default;
 $data-table-button-padding-right: 16px !default;
 $data-table-cell-top: $data-table-card-padding / 2;
+
+/* CHIP */
+
+$chip-height: 32px !default;
+$chip-font-size: 13px !default;
+$chip-icon-size: 21px !default;
 
 /* ANIMATION */
 

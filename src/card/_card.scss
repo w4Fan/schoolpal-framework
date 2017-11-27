@@ -58,7 +58,7 @@ $card-subtitle-color: unquote("rgba(#{$color-black}, 0.54)") !default;
     flex-grow: 1;
   }
 
-  .button{
+  .button {
     margin-left: 16px;
   }
 }
@@ -82,6 +82,12 @@ $card-subtitle-color: unquote("rgba(#{$color-black}, 0.54)") !default;
     color: $card-subtitle-color;
     line-height: normal;
     margin: 0;
+  }
+}
+
+.card__title-chip {
+  .chip {
+    margin-right: 12px;
   }
 }
 

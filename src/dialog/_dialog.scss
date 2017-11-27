@@ -57,6 +57,7 @@ $dialog-content-color: unquote("rgba(#{$color-black}, 0.54)") !default;
       flex: 1;
       margin: 0;
       font-size: 1.25rem;
+      text-align: left;
     }
   }
 
@@ -92,6 +93,29 @@ $dialog-content-color: unquote("rgba(#{$color-black}, 0.54)") !default;
       }
     }
   }
+
+  // &[role="filterdialog"] {
+  //   position: absolute;
+  //   left: auto;
+  //   right: 0;
+
+  //   width: auto;
+  //   height: auto;
+  //   min-width: 100%;
+
+  //   .dialog__backdrop {
+  //     display: none;
+  //   }
+
+  //   .dialog__surface {
+  //     min-width: 100%;
+  //     max-width: 280px;
+  //   }
+
+  //   .dialog__body {
+  //     padding: 0 0 24px;
+  //   }
+  // }
 
   @media (max-width: 640px) {
     min-width: 280px;

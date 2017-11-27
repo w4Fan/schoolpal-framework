@@ -9,16 +9,18 @@
   window["Groups"] = Groups;
 
   Groups.prototype.CssClasses_ = {
-    ITEM: "list-item",
+    ITEM: "groups-item",
     ITEM_ARROW: "groups-arrow",
     ITEM_ARROW_UP: "groups--arrowup",
 
+    IS_TABLE: "TABLE",
     IS_SELECTED: "groups--selected",
     IS_VISIBLE: "groups--show"
   };
 
   Groups.prototype.init = function() {
     if (this.element_) {
+      this.typo = this.element_.tagName;
       this.items = this.element_.querySelectorAll("." + this.CssClasses_.ITEM);
       this.boundItemClick_ = this.handleForClick_.bind(this);
       this.boundItemArrowClick_ = this.arrowForClick_.bind(this);
@@ -28,7 +30,9 @@
           "." + this.CssClasses_.ITEM_ARROW
         );
 
-        this.items[i].addEventListener("click", this.boundItemClick_);
+        if (this.typo !== this.CssClasses_.IS_TABLE) {
+          this.items[i].addEventListener("click", this.boundItemClick_);
+        }
 
         if (itemsArrow_) {
           itemsArrow_.addEventListener("click", this.boundItemArrowClick_);
@@ -51,15 +55,21 @@
     evt.stopPropagation();
     evt.preventDefault();
 
-    this.targetChildNode_ = this.getChildNode_(evt.target.parentNode);
+    var parentNode;
 
-    if (
-      evt.target.parentNode.classList.contains(this.CssClasses_.ITEM_ARROW_UP)
-    ) {
-      evt.target.parentNode.classList.remove(this.CssClasses_.ITEM_ARROW_UP);
+    if (this.typo === this.CssClasses_.IS_TABLE) {
+      parentNode = evt.target.parentNode.parentNode.parentNode;
+    } else {
+      parentNode = evt.target.parentNode;
+    }
+
+    this.targetChildNode_ = this.getChildNode_(parentNode);
+
+    if (parentNode.classList.contains(this.CssClasses_.ITEM_ARROW_UP)) {
+      parentNode.classList.remove(this.CssClasses_.ITEM_ARROW_UP);
       this.hideChild_();
     } else {
-      evt.target.parentNode.classList.add(this.CssClasses_.ITEM_ARROW_UP);
+      parentNode.classList.add(this.CssClasses_.ITEM_ARROW_UP);
       this.showChild_();
     }
   };
@@ -80,7 +90,6 @@
   };
 
   Groups.prototype.getChildNode_ = function(target_) {
-    console.log(target_);
     var level = parseInt(target_.getAttribute("level"));
     var nextNode = this.getNextNode(target_);
     var all = [];

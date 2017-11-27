@@ -70,13 +70,27 @@ $toolbar-text-color: unquote("rgb(#{$color-white})");
     height: 100%;
   }
 
-  &__title {
+  &__title,
+  &__title.button {
     display: block;
     position: relative;
+    margin-left: 20px;
+    color: $toolbar-text-color;
 
     @include typo-title();
     @include typo-overflow-ellipsis;
     font-weight: 400;
+    box-sizing: border-box;
+  }
+
+  &__title.button{
+    font-size: 14px;
+    font-weight: 600;
+    vertical-align: baseline;
+
+    .fa{
+      vertical-align: baseline;
+    }
   }
 
   &__icon {
