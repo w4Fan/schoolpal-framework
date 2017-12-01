@@ -4,21 +4,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>schoolpal framework</title>
+  <title>schoolpal framework data table</title>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
   <link rel="stylesheet" href="dist/schoolpal.css" />
+  <script src="dist/schoolpal.js"></script>
   <style>
     .bg {
-      background-color: #cccccc;
+      background-color: #fff;
+    }
+
+    .bg-grid {
+      background-color: rgba(0, 0, 0, 0.12);
     }
   </style>
-  <script src="dist/schoolpal.js"></script>
 </head>
 
 <body>
   <div class="layout">
-
     <aside class="drawer js-drawer drawer--open" for="drawer-button">
       <div class="drawer__drawer">
         <div class="drawer__toolbar-spacer">
@@ -171,13 +174,13 @@
     </aside>
 
     <div class="layout__container">
-
       <header class="toolbar">
         <div class="toolbar__row">
           <!-- <i id="drawer-button" class="fa fa-bars toolbar__icon" aria-hidden="true"></i> -->
           <button id="drawer-button" class="button button--icon toolbar__icon js-button">
             <i class="fa fa-bars" aria-hidden="true"></i>
           </button>
+          <span class="toolbar__title">权限管理</span>
           <div class="toolbar__spacer"></div>
           <!-- <i id="menu-button" class="fa fa-ellipsis-v toolbar__icon" aria-hidden="true"></i> -->
           <button id="menu-button" class="button button--icon toolbar__icon js-button">
@@ -204,136 +207,117 @@
       </header>
 
       <main>
-        <p>GRID</p>
-        <p>desktop-columns:12, tablet-columns:8, phone-columns:4</p>
-        <div class="grid">
-          <div class="cell cell--1-col bg">1</div>
-          <div class="cell cell--1-col bg">1</div>
-          <div class="cell cell--1-col bg">1</div>
-          <div class="cell cell--1-col bg">1</div>
-          <div class="cell cell--1-col bg">1</div>
-          <div class="cell cell--1-col bg">1</div>
-          <div class="cell cell--1-col bg">1</div>
-          <div class="cell cell--1-col bg">1</div>
-          <div class="cell cell--1-col bg">1</div>
-          <div class="cell cell--1-col bg">1</div>
-          <div class="cell cell--1-col bg">1</div>
-          <div class="cell cell--1-col bg">1</div>
-        </div>
-        <div class="grid">
-          <div class="cell cell--4-col bg">4</div>
-          <div class="cell cell--4-col bg">4</div>
-          <div class="cell cell--4-col bg">4</div>
-        </div>
-        <div class="grid">
-          <div class="cell cell--6-col cell--8-col-tablet bg">6 (8 tablet)</div>
-          <div class="cell cell--4-col cell--6-col-tablet bg">4 (6 tablet)</div>
-          <div class="cell cell--2-col cell--4-col-phone bg">2 (4 phone)</div>
-        </div>
-        <p>BUTTONS</p>
-        <button class="button button--fab js-button">
-          <i class="fa fa-plus" aria-hidden="true"></i>
-        </button>
-        <button class="button button--fab button--mini-fab js-button">
-          <i class="fa fa-plus" aria-hidden="true"></i>
-        </button>
-        <button class="button button--fab js-button" disabled>
-          <i class="fa fa-plus" aria-hidden="true"></i>
-        </button>
-        <br/>
-        <br/>
-        <button class="button button--raised js-button">
-          Button
-        </button>
-        <button class="button button--raised js-button" disabled>
-          Button
-        </button>
-        <button class="button button--raised button--primary js-button">
-          Button
-        </button>
-        <br/>
-        <br/>
-        <br/>
-        <button class="button js-button">
-          Button
-        </button>
-        <button class="button button--primary js-button">
-          Button
-        </button>
-        <br />
-        <br/>
-        <button class="button button--icon js-button">
-          <i class="fa fa-eercast" aria-hidden="true"></i>
-        </button>
-        <button class="button button--icon button--primary js-button">
-          <i class="fa fa-eercast" aria-hidden="true"></i>
-        </button>
-        <p>form</p>
-        <form action="#">
-          <div class="textfield js-textfield">
-            <input class="textfield__input" type="text" id="dateInput" readonly>
-            <label class="textfield__label" for="sample1">Text...</label>
-          </div>&nbsp;&nbsp;
-          <div class="textfield js-textfield">
-            <input class="textfield__input" type="text">
-            <label class="textfield__label" for="sample1">Text...</label>
-          </div>&nbsp;&nbsp;
-          <div class="textfield js-textfield">
-            <select class="textfield__input textfield__input-select" id="sample2">
-              <option value=""></option>
-              <option value="1">selectfield-highlight-color</option>
-              <option value="2">selectfield-disabled-color</option>
-              <option value="3">selectfield-error-color</option>
-            </select>
-            <div class="textfield__icon">
-              <i class="fa fa-angle-down" aria-hidden="true"></i>
+        <div class="grid grid--no-spacing">
+          <div class="cell cell--8-col">
+            <div class="grid grid--gutter-1 bg-grid shadow--2dp">
+              <div class="cell cell--4-col cell--3-col-tablet bg">
+                <div class="card">
+                  <div class="card__title">
+                    <div class="card__title-text">
+                      <h1 class="card__title-text--large">选择组织</h1>
+                    </div>
+                  </div>
+                  <div class="card__supporting-text">
+                    <ul class="list groups js-groups">
+                      <li class="groups-item" level="1">
+                        <i class="groups-item__start-detail fa fa-angle-down fa-fw groups-arrow" aria-hidden="true"></i>
+                        Applications
+                      </li>
+                      <li style="padding-left:56px" class="groups-item" level="2">
+                        <i class="groups-item__start-detail fa fa-angle-down fa-fw groups-arrow" aria-hidden="true"></i>
+                        Applications
+                      </li>
+                      <li style="padding-left:112px" class="groups-item" level="3">
+                        <span class="groups-item__start-detail"></span>
+                        Applications
+                      </li>
+                      <li style="padding-left:56px" class="groups-item" level="2">
+                        <span class="groups-item__start-detail"></span>
+                        Applications
+                      </li>
+                      <li class="groups-item" level="1">
+                        <i class="groups-item__start-detail fa fa-angle-down fa-fw groups-arrow" aria-hidden="true"></i>
+                        Applications
+                      </li>
+                      <li style="padding-left:56px" class="groups-item" level="2">
+                        <span class="groups-item__start-detail"></span>
+                        Applications
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="cell cell--8-col cell--5-col-tablet bg">
+                <div class="card">
+                  <div class="card__title">
+                    <div class="card__title-text">
+                      <h1 class="card__title-text--large">详细信息</h1>
+                    </div>
+                  </div>
+                  <ul class="list list--two-line">
+                    <li class="list-item">
+                      <span class="list-item__text">
+                        输入类
+                        <span class="list-item__text__secondary">输入描述</span>
+                      </span>
+                      <div class="list-item__end-form">
+                        <div class="textfield js-textfield">
+                          <input class="textfield__input" type="text">
+                          <label class="textfield__label" for="sample1">Text...</label>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="list-item">
+                      <span class="list-item__text">
+                        时间类
+                      </span>
+                      <div class="list-item__end-form">
+                        <div id="dateInput" class="textfield js-textfield">
+                          <input class="textfield__input" type="text" readonly>
+                          <label class="textfield__label" for="sample1">Text...</label>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="list-item">
+                      <span class="list-item__text">
+                        选择类
+                        <span class="list-item__text__secondary">选择描述</span>
+                      </span>
+                      <div class="list-item__end-form">
+                        <div class="textfield js-textfield">
+                          <select class="textfield__input textfield__input-select" id="sample2">
+                            <option value=""></option>
+                            <option value="1">selectfield-highlight-color</option>
+                            <option value="2">selectfield-disabled-color</option>
+                            <option value="3">selectfield-error-color</option>
+                          </select>
+                          <div class="textfield__icon">
+                            <i class="fa fa-angle-down" aria-hidden="true"></i>
+                          </div>
+                          <label class="textfield__label" for="sample2">Select...</label>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="list-item">
+                      <span class="list-item__text">
+                        真假类
+                        <span class="list-item__text__secondary">描述</span>
+                      </span>
+                      <div class="list-item__end-form">
+                        <label class="switch js-switch" for="switch-1">
+                          <input type="checkbox" id="switch-1" class="switch__input" checked>
+                          <span class="switch__label"></span>
+                        </label>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
-            <label class="textfield__label" for="sample2">Select...</label>
           </div>
-          <br />
-          <br />
-          <label class="checkbox js-checkbox" for="checkbox-1">
-            <input type="checkbox" id="checkbox-1" class="checkbox__input" checked>
-            <span class="checkbox__label">Checkbox1</span>
-          </label>
-          <label class="checkbox js-checkbox" for="checkbox-2">
-            <input type="checkbox" id="checkbox-2" class="checkbox__input" disabled>
-            <span class="checkbox__label">Checkbox2</span>
-          </label>
-          <br />
-          <br />
-          <label class="radio js-radio" for="option-1">
-            <input type="radio" id="option-1" class="radio__button" name="options" value="1" checked>
-            <span class="radio__label">First</span>
-          </label>
-          <label class="radio js-radio" for="option-2">
-            <input type="radio" id="option-2" class="radio__button" name="options" value="2">
-            <span class="radio__label">Second</span>
-          </label>
-          <label class="radio js-radio" for="option-3">
-            <input type="radio" id="option-3" class="radio__button" name="options" value="3" disabled>
-            <span class="radio__label">Third</span>
-          </label>
-          <br />
-          <br />
-          <label class="switch js-switch" for="switch-1">
-            <input type="checkbox" id="switch-1" class="switch__input" checked>
-            <span class="switch__label"></span>
-          </label>&nbsp;&nbsp;&nbsp;&nbsp;
-          <label class="switch js-switch" for="switch-2">
-            <input type="checkbox" id="switch-2" class="switch__input">
-            <span class="switch__label"></span>
-          </label>&nbsp;&nbsp;&nbsp;&nbsp;
-          <label class="switch js-switch" for="switch-3">
-            <input type="checkbox" id="switch-3" class="switch__input" disabled>
-            <span class="switch__label"></span>
-          </label>
-        </form>
-        <a href="datatable.html">data table demo</a>
+        </div>
       </main>
-
     </div>
-
   </div>
 
   <script>
@@ -343,23 +327,13 @@
       dateDialog["Dialog"].acceptBtn.addEventListener('click', function () {
         console.log('accept')
         dateDialog["Dialog"].hide()
-        dateDialog["DatePicker"].forElement_.value = dateDialog["DatePicker"].getDate();
+        dateDialog["DatePicker"].forElement_["Textfield"].change(dateDialog["DatePicker"].getDate());
       })
 
       dateDialog["Dialog"].cancelBtn.addEventListener('click', function () {
         console.log('cancel')
         dateDialog["Dialog"].hide()
       })
-      // var dialog = document.getElementById('dialog')["Dialog"];
-
-      // dialog.acceptBtn.addEventListener('click', function () {
-      //   console.log('accept')
-      //   dialog.hide()
-      // })
-      // dialog.cancelBtn.addEventListener('click', function () {
-      //   console.log('cancel')
-      //   dialog.hide()
-      // })
     })
   </script>
 </body>

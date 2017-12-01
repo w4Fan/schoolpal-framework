@@ -14,6 +14,7 @@
     ITEM_ARROW_UP: "groups--arrowup",
 
     IS_TABLE: "TABLE",
+    IS_CHECKBOX: "checkbox",
     IS_SELECTED: "groups--selected",
     IS_VISIBLE: "groups--show"
   };
@@ -42,14 +43,58 @@
   };
 
   Groups.prototype.handleForClick_ = function(evt) {
-    for (var i = 0; i < this.items.length; i++) {
-      if (this.items[i] !== evt.target) {
-        this.items[i].classList.remove(this.CssClasses_.IS_SELECTED);
-      }
-    }
+    // var isCheckbox = this.isCheckbox_(evt.target);
 
-    evt.target.classList.add(this.CssClasses_.IS_SELECTED);
+    // if (isCheckbox) {
+    //   var checkboxs = this.element_.querySelectorAll(
+    //     "." + this.CssClasses_.IS_CHECKBOX
+    //   );
+
+    //   if(checkboxs.length){
+    //     for(var i =0; i<checkboxs.length; i++){
+    //       if(checkboxs[i]["Checkbox"] !== this.getTargetCheckBox_(evt.target)){
+    //         checkboxs[i]["Checkbox"].
+    //       }
+    //     }
+    //   }
+    // } else {
+      for (var i = 0; i < this.items.length; i++) {
+        if (this.items[i] !== evt.target) {
+          this.items[i].classList.remove(this.CssClasses_.IS_SELECTED);
+        }
+      }
+    // }
+
+    // if (isCheckbox) {
+    //   console.log(this.getTargetCheckBox_(evt.target));
+    // } else {
+      evt.target.classList.add(this.CssClasses_.IS_SELECTED);
+    // }
   };
+
+  // Groups.prototype.isCheckbox_ = function(elem) {
+  //   if (elem.tagName === "LI") {
+  //     if (elem.querySelectorAll(".checkbox").length) {
+  //       return true;
+  //     } else {
+  //       return false;
+  //     }
+  //   }
+
+  //   if (elem.tagName === "INPUT" || elem.tagName === "SPAN") {
+  //     return true;
+  //   } else {
+  //     return false;
+  //   }
+  // };
+
+  // Groups.prototype.getTargetCheckBox_ = function(elem) {
+  //   if (elem.tagName === "LI") {
+  //     return elem.querySelector("." + this.CssClasses_.IS_CHECKBOX)["Checkbox"];
+  //   } else {
+  //     return elem.parentNode["Checkbox"];
+  //   }
+  // };
 
   Groups.prototype.arrowForClick_ = function(evt) {
     evt.stopPropagation();

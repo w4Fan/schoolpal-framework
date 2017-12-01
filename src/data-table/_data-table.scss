@@ -109,6 +109,13 @@ $data-table-selection-color: #e0e0e0 !default;
   }
 }
 
+.data-table--no-border {
+  td {
+    border-top: 0 none;
+    border-bottom: 0 none;
+  }
+}
+
 .data-table__select {
   width: 16px;
 }
@@ -123,7 +130,7 @@ $data-table-selection-color: #e0e0e0 !default;
   height: 40px;
   align-items: center;
 
-  &--btn{
+  &--btn {
     margin-left: 32px;
   }
 }

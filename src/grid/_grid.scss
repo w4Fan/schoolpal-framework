@@ -6,7 +6,8 @@
   margin: 0 auto 0 auto;
   align-items: stretch;
 
-  &.grid--no-spacing {
+  &.grid--no-spacing,
+  &.grid--gutter-1 {
     padding: 0;
   }
 }
@@ -35,6 +36,14 @@
   margin: 0;
 }
 
+.grid.grid--gutter-1 > .cell {
+  margin: 0 0 0 1px;
+}
+
+.grid.grid--gutter-1 > .cell:first-child {
+  margin: 0;
+}
+
 @for $i from 1 through $grid-max-columns {
   .cell--order-#{$i} {
     order: $i;
@@ -46,6 +55,10 @@
 
   .grid--no-spacing > & {
     width: #{(($size / $columns) * 100)+"%"};
+  }
+
+  .grid--gutter-1 > & {
+    width: calc(#{(($size / $columns) * 100)+"%"} - #{1px});
   }
 }
 
